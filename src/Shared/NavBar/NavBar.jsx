@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
     return (
         <div>
@@ -34,6 +36,7 @@ const NavBar = () => {
                             </details>
                         </li>
                         <li><a>Item 3</a></li>
+                        <li><Link to='addCategory'>Add Category</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
