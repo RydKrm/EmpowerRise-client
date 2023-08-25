@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
+import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
 
   export const router = createBrowserRouter([
     {
@@ -12,7 +13,10 @@ import Home from "../Pages/Home/Home/Home";
         {
           path: "/",
           element: <Home />,
-        },
+        },{
+          path:'addCategory',
+          element: <EditCategory/>
+        }
       ],
     },
   ]);
