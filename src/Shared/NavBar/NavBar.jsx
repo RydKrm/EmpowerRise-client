@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
+
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -46,6 +47,7 @@ const NavBar = () => {
                             </details>
                         </li>
                         <li><a>Item 3</a></li>
+                        <li><Link to='addCategory'>Add Category</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
