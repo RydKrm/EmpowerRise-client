@@ -3,7 +3,10 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
+import Login from "../Pages/LogIn/LogIn";
+import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
+
 
   export const router = createBrowserRouter([
     {
@@ -13,10 +16,19 @@ import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "registration",
+          element: <Registration />,
         },{
           path:'addCategory',
           element: <EditCategory/>
         }
+
       ],
     },
   ]);
