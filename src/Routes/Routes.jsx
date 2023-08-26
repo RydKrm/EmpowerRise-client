@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
+import AddBlog from "../Pages/User/AddBlog/AddBlog";
 
 
   export const router = createBrowserRouter([
@@ -24,9 +25,14 @@ import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
         {
           path: "registration",
           element: <Registration />,
-        },{
+        },
+        {
           path:'addCategory',
           element: <EditCategory/>
+        },
+        {
+          path:'addBlog',
+          element: <AddBlog/>
         }
 
       ],

@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
-
 const Registration = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm();
