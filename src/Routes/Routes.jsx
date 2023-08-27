@@ -8,6 +8,8 @@ import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
 import AddDonation from "../Pages/Donation/AddDonation/AddDonation";
 import Donation from "../Pages/Donation/Donation/Donation";
+import AddBlog from "../Pages/User/AddBlog/AddBlog";
+
 
 
   export const router = createBrowserRouter([
@@ -26,7 +28,8 @@ import Donation from "../Pages/Donation/Donation/Donation";
         {
           path: "registration",
           element: <Registration />,
-        },{
+        },
+        {
           path:'addCategory',
           element: <EditCategory/>
         },{
@@ -35,6 +38,10 @@ import Donation from "../Pages/Donation/Donation/Donation";
         },{
           path:'Donation',
           element:<Donation/>
+        },
+        {
+          path:'addBlog',
+          element: <AddBlog/>
         }
 
       ],

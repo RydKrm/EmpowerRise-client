@@ -51,6 +51,7 @@ const NavBar = () => {
                         <li><Link to='addDonation'>Add Donation</Link></li>
                         <li><Link to='Donation'> Donation</Link></li>
 
+                        <li><Link to='addBlog'>Add Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
