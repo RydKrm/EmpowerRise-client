@@ -12,9 +12,6 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
-
-
-
     const handleLoginSubmit = event => {
         event.preventDefault();
         const form = event.target;
