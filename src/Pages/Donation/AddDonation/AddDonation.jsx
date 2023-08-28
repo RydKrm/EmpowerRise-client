@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 //import QuillTextEditor from '../../../components/QuillTextEditor/QuillTextEditor';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import SelectItem from '../../../components/SelectItem/SelectItem';
+import SelectCategory from '../../../components/SelectCategory/SelectCategory';
 import {getDownloadURL, ref, uploadBytes, getStorage} from 'firebase/storage';
 import {v4 as uuidv4} from 'uuid';
 import {app} from '../../../firebase/firebase.config';
@@ -18,7 +18,7 @@ const AddDonation = () => {
     reset,
     formState: { errors }
   } = useForm();
- const [categoryList,setCategoryList] = useState([]);
+
  const [selectedImages, setSelectedImages] = useState(null);
  const [description,setDescription] = useState('');
  const [selectCategory,setSelectCategory] = useState('');
@@ -40,11 +40,7 @@ const AddDonation = () => {
       }      
     };
 
- useEffect(()=>{
-    axios.get('http://localhost:5000/getAllCategory')
-    .then(res=>{setCategoryList(res.data)})
-    .catch(err=>{console.log(err)});
- },[])
+
 
   const onSubmit = async(data) => {
      const imageUrl = await uploadImages();
@@ -123,7 +119,7 @@ const AddDonation = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-poppins mt-5'>
               <div className='flex flex-col'>
                 <label className='text-md text-poppins text-md ms-1'>Select Category </label>
-                <SelectItem categoryList={categoryList} setSelectCategory={setSelectCategory}/>
+                <SelectCategory setSelectCategory={setSelectCategory}/>
                </div>
             <div className='flex flex-col md:ms-4'>
                 <label className='text-md text-poppins text-md ms-1'>Select Image</label>
