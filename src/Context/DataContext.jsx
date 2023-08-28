@@ -5,7 +5,6 @@ const DataContext = createContext();
 const initialState = {
     status:null,
     category:null,
-    place:null,
     sortBy:null,
     page:1,
     type:null

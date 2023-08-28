@@ -7,10 +7,11 @@ import Login from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
 import AddDonation from "../Pages/Donation/AddDonation/AddDonation";
-import Donation from "../Pages/Donation/Donation/Donation";
 import AddBlog from "../Pages/User/AddBlog/AddBlog";
+import DonationContainer from "../Pages/Donation/Donation/DonationContainer";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
+
 
 
 
@@ -39,7 +40,7 @@ import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
           element:<AddDonation/>
         },{
           path:'Donation',
-          element:<Donation/>
+          element:<DonationContainer/>
         },
         {
           path:'addBlog',
