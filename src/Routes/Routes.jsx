@@ -9,6 +9,9 @@ import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
 import AddDonation from "../Pages/Donation/AddDonation/AddDonation";
 import AddBlog from "../Pages/User/AddBlog/AddBlog";
 import DonationContainer from "../Pages/Donation/Donation/DonationContainer";
+import Blogs from "../Pages/Home/Blogs/Blogs";
+import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
+
 
 
 
@@ -42,6 +45,14 @@ import DonationContainer from "../Pages/Donation/Donation/DonationContainer";
         {
           path:'addBlog',
           element: <AddBlog/>
+        },
+        {
+          path:'blogs',
+          element: <Blogs/>
+        },
+        {
+          path:'blogs/:id',
+          element: <BlogsDetails/>
         }
 
       ],
