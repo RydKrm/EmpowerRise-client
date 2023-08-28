@@ -12,7 +12,7 @@ const SectionTitle = ({ img, tittle}) => {
         >
                 <div className="text-center text-black w-3/6 h-3/6 mx-auto my-auto flex justify-center items-center" style={{ backgroundColor: 'rgba(21, 21, 21, 0.6)' }}>
                     <div>
-                        <h1 className="text-4xl uppercase text-white">{tittle}</h1>
+                        <h1 className="text-4xl uppercase text-white px-5">{tittle}</h1>
                     </div>
                 </div>
             </div>
