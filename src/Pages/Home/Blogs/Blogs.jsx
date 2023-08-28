@@ -1,8 +1,8 @@
-import  { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import SectionTitle from '../../../component/SectionTittle/SectionTittle'; // Make sure the path is correct
-import img from '../../../assets/blogs/blogImage.jpg'
+import SectionTitle from '../../../component/SectionTittle/SectionTittle';
+import img from '../../../assets/blogs/blogImage.jpg';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -21,15 +21,12 @@ const Blogs = () => {
     return (
         <section>
             <div>
-                
-               
-                    <SectionTitle img={img} tittle='Our Blog Here'></SectionTitle>
-          
+                <SectionTitle img={img} tittle='Our Blog Here'></SectionTitle>
             </div>
-            <div className="container  p-4 max-w-screen-xl mx-auto">
+            <div className="container p-4 max-w-screen-xl mx-auto">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                     {blogs.map(blog => (
-                        <div key={blog._id} className="bg-white p-4 shadow-md rounded-md">
+                        <div key={blog._id} className="bg-white p-4 shadow-md rounded-md transform transition-transform hover:scale-105">
                             <div className="mt-2">
                                 <img
                                     src={blog.image}
@@ -42,7 +39,7 @@ const Blogs = () => {
                                 <p className="mt-2 text-gray-600">{blog.date}</p>
                             </div>
                             <Link to={`/blogs/${blog._id}`}>
-                                <h2 className="text-xl font-semibold cursor-pointer mt-2">{blog.title}</h2>
+                                <h2 className="text-xl font-semibold cursor-pointer mt-2 hover:text-teal-600 hover:text-2xl">{blog.title}</h2>
                             </Link>
                             <p className="mt-2 text-green-500">{blog.donation}</p>
                         </div>

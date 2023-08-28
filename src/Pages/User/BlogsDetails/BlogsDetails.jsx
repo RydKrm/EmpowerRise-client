@@ -29,24 +29,42 @@ const BlogsDetails = () => {
             <div>
                 <SectionTitle img={img} tittle={blog.title} ></SectionTitle>
             </div>
-            <div className="container mx-auto flex w-full bg-white p-4 shadow-md rounded-md">
+            <div className="max-w-screen-xl mx-auto">
+                <div className="flex flex-wrap justify-center">
+                    <div className="w-full lg:w-3/4 bg-white p-4 shadow-md rounded-md">
+                        <img
+                            src={blog.image} // Replace with the image URL from the blog data
+                            alt={blog.title}
+                            className="w-full h-auto rounded-md mb-4 lg:mb-0"
+                        />
+                        <div className="">
+                            {/* <div>
+                                <button className="bg-blue-500 text-white py-2 px-4 rounded-md mb-2 mt-10">
+                                    {blog.category}
+                                </button>
+                            </div> */}
+                            <div className='flex justify-between mt-10'>
+                                <button className="bg-blue-500 text-white py-2 px-4 rounded-md mb-2">
+                                    {blog.category}
+                                </button>
+                                <p className="mt-2 text-gray-600">{blog.date}</p>
+                            </div>
+                            <div className='flex mb-2'>
+                                <h1 className="text-xl font-bold">Name:</h1>
+                                <p className="text-xl ps-2">{blog.name}</p>
+                            </div>
+                            <h2 className="text-2xl font-semibold mb-2">{blog.title}</h2>
+                            <div className='flex'>
+                                <h1 className="text-xl font-bold">Donation:</h1>
+                                <p className="text-green-500 ps-2 text-xl">{blog.donation}</p>
+                            </div>
 
-                <div className="w-1/2">
-                    <img
-                        src={blog.image} // Replace with the image URL from the blog data
-                        alt={blog.title}
-                        className="max-h-96 max-w-full"
-                    />
-                    <h1 className='text-3xl font-bold mt-3'>Short Story: </h1>
-                    <p className="mt-4">{blog.description}</p>
-                </div>
-                <div className=" w-1/2">
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded-md mt-4">
-                        {blog.category}
-                    </button>
-                    <h2 className="text-2xl font-semibold mb-2">{blog.title}</h2>
-                    <p className="mt-2 text-green-500">{blog.donation}</p>
-
+                            <div>
+                                <h1 className="text-3xl font-bold mt-3">Short Story:</h1>
+                                <p className="mt-4">{blog.description}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
