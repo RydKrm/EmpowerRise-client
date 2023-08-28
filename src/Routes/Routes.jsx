@@ -7,6 +7,8 @@ import Login from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
 import AddBlog from "../Pages/User/AddBlog/AddBlog";
+import Blogs from "../Pages/Home/Blogs/Blogs";
+import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
 
 
   export const router = createBrowserRouter([
@@ -33,6 +35,14 @@ import AddBlog from "../Pages/User/AddBlog/AddBlog";
         {
           path:'addBlog',
           element: <AddBlog/>
+        },
+        {
+          path:'blogs',
+          element: <Blogs/>
+        },
+        {
+          path:'blogs/:id',
+          element: <BlogsDetails/>
         }
 
       ],
