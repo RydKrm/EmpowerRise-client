@@ -16,8 +16,6 @@ const Reducer = (state,action)=>{
         return {...state,status:action.payload};
     case 'SET_CATEGORY':
     return {...state,category:action.payload};
-    case 'SET_PLACE':
-    return {...state,place:action.payload};
     case 'SORT_BY':
     return {...state,sortBy:action.payload};
     case 'SET_PAGE':
