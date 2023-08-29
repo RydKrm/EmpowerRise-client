@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 //import QuillTextEditor from '../../../components/QuillTextEditor/QuillTextEditor';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -10,6 +10,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import useUserInfo from '../../../CustomHooks/useUserInfo/useUserInfo';
 import Swal from 'sweetalert2';
+import useDateNow from '../../../CustomHooks/useDateNow/useDateNow';
 
 const AddDonation = () => {
     const {
@@ -39,8 +40,7 @@ const AddDonation = () => {
         }
       }      
     };
-
-
+      //  const {dateNow} = useDateNow();
 
   const onSubmit = async(data) => {
      const imageUrl = await uploadImages();
@@ -51,7 +51,8 @@ const AddDonation = () => {
           collectedAmount:0,
           userId,
           category:selectCategory,
-          status:'pending'
+          status:'processing',
+          date: new Date()
         };
     console.log(data);
     axios.post('http://localhost:5000/addDonationPost',data)

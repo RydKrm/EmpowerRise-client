@@ -32,27 +32,29 @@ const DonationTopMenu = () => {
 
     const sortBy = [
         {_id:4,field:'newest'},
-        {_id:5,field:'latest'},
-        {_is:6,field:'amount'}
+        {_id:5,field:'oldest'},
+        {_id:6,field:'highToLow'},
+        {_id:7,field:'lowToHigh'}
+
     ]
 
     const selectCategory =  categoryList.map(obj=>({
         field : obj.category,
         _id:obj._id,
     }));
-    
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-3  ">
                 <div className="flex flex-row mx-4">
-                    <p>By Status</p>
+                    <p className='font-poppins mt-5 me-5 font-light'>By Status</p>
                     <DropDown List={selectStatus} handler={setStatus}/>
                 </div>
                 <div className="flex flex-row mx-4">
-                    <p>Sort by</p>
+                    <p className='font-poppins mt-5 me-5 font-light'> Sort By</p>
                     <DropDown List={sortBy} handler={setSort}/>
                 </div>
                 <div className="flex flex-row mx-4">
-                    <p>Select Category</p>
+                    <p className='font-poppins mt-5 me-5 font-light w-96'>Category</p>
                     <DropDown List={selectCategory} handler={setCategory}/>
                 </div>
                 
