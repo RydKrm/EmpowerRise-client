@@ -1,9 +1,9 @@
-import {faClock, faCompass} from '@fortawesome/free-regular-svg-icons';
+import { faClock, faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import useDaysLeft from '../../../CustomHooks/useDaysLeft/useDaysLeft';
 
-const DonationPost = ({post}) => {
+const FundPost = ({post}) => {
     const daysLeft = useDaysLeft(post.dayLeft);
     let collect = (post.collectedAmount/post.amount)*100;
     collect = collect.toFixed(2);
@@ -23,8 +23,8 @@ const DonationPost = ({post}) => {
                  <div className='flex flex-row'>    
                     <div className="text-sm mt-1 text-gray-500 ms-2 me-1 font-light"><FontAwesomeIcon icon={faClock} /></div>
                     <div className='text-sm text-gray-500 mt-1'>{daysLeft} days left</div>
-                    <div className="text-sm mt-1 text-gray-500 ms-5 font-light"><FontAwesomeIcon icon={faCompass} /></div>
-                    <div className='text-sm text-gray-500 mt-1 ms-1'>{post.location} </div>
+                    <div className="text-sm mt-1 text-gray-500 ms-5 font-light"><FontAwesomeIcon icon={faFaceSmile} /></div>
+                    <div className='text-sm text-gray-500 mt-1 ms-1'>For {post.totalPeople} people</div>
                 </div>
               <h1 className='text-[22px] font-bold text-black leading-6 mt-5 hover:text-violet-600 cursor-pointer'>{post.title} </h1>
               <div className='mt-3 flex flex-col'>
@@ -41,4 +41,4 @@ const DonationPost = ({post}) => {
     );
 };
 
-export default DonationPost;
+export default FundPost;

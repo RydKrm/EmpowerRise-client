@@ -11,6 +11,8 @@ import AddBlog from "../Pages/User/AddBlog/AddBlog";
 import DonationContainer from "../Pages/Donation/Donation/DonationContainer";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
+import AddFund from "../Pages/Fund/AddFund/AddFund";
+import FundContainer from "../Pages/Fund/Fund/FundContainer";
 
 
 
@@ -41,18 +43,21 @@ import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
         },{
           path:'Donation',
           element:<DonationContainer/>
-        },
-        {
+        },{
           path:'addBlog',
           element: <AddBlog/>
-        },
-        {
+        },{
           path:'blogs',
           element: <Blogs/>
-        },
-        {
+        },{
           path:'blogs/:id',
           element: <BlogsDetails/>
+        },{
+          path:'addFund',
+          element:<AddFund/>
+        },{
+          path:'fund',
+          element:<FundContainer/>
         }
 
       ],
