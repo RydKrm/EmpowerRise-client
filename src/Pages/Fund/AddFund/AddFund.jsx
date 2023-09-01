@@ -47,8 +47,6 @@ const AddFund = () => {
      data = {...data,
           image:imageUrl,
           'description':description,
-          donatedPeople:0,
-          collectedAmount:0,
           userId,
           category:selectCategory,
           status:'processing',

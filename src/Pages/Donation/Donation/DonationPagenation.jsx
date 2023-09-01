@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { DataContext } from '../../../Context/DataContext';
 
 const DonationPagenation = ({totalData}) => {
-    console.log("total data from pagination ", totalData);
+   // console.log("total data from pagination ", totalData);
     const dataInOnePage = 9;
     const totalPage = Math.ceil(totalData/dataInOnePage);
     const pageArray = Array(totalPage).fill(0);
-    console.log("total page from pagination ", pageArray);
+    //console.log("total page from pagination ", pageArray);
     const {state,dispatch} = useContext(DataContext);
 
     const setPage = (page)=>{

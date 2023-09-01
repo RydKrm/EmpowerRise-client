@@ -13,6 +13,8 @@ import Blogs from "../Pages/Home/Blogs/Blogs";
 import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
 import AddFund from "../Pages/Fund/AddFund/AddFund";
 import FundContainer from "../Pages/Fund/Fund/FundContainer";
+import SingleDonation from "../Pages/Donation/SingleDonation/SingleDonation";
+import SingleFund from "../Pages/Fund/SingleFund/SingleFund";
 
 
 
@@ -25,16 +27,13 @@ import FundContainer from "../Pages/Fund/Fund/FundContainer";
         {
           path: "/",
           element: <Home />,
-        },
-        {
+        },{
           path: "login",
           element: <Login />,
-        },
-        {
+        }, {
           path: "registration",
           element: <Registration />,
-        },
-        {
+        },{
           path:'addCategory',
           element: <EditCategory/>
         },{
@@ -43,6 +42,9 @@ import FundContainer from "../Pages/Fund/Fund/FundContainer";
         },{
           path:'Donation',
           element:<DonationContainer/>
+        },{
+          path:'SingleDonation/:id',
+          element:<SingleDonation/>
         },{
           path:'addBlog',
           element: <AddBlog/>
@@ -58,6 +60,9 @@ import FundContainer from "../Pages/Fund/Fund/FundContainer";
         },{
           path:'fund',
           element:<FundContainer/>
+        },{
+          path:'SingleFund/:id',
+          element:<SingleFund/>
         }
 
       ],
