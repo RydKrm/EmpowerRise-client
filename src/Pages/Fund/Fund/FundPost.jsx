@@ -2,6 +2,7 @@ import { faClock, faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import useDaysLeft from '../../../CustomHooks/useDaysLeft/useDaysLeft';
+import { Link } from 'react-router-dom';
 
 const FundPost = ({post}) => {
     const daysLeft = useDaysLeft(post.dayLeft);
@@ -15,7 +16,6 @@ const FundPost = ({post}) => {
             </div>
             {/* Details Container */}
             <div className='mx-7 mt-10'>
-                
                 <div className="flex flex-row">
                     <div className="bg-violet-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins">{post.category}</div>
                     <div className="bg-blue-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2">{post.status}</div>
@@ -26,7 +26,7 @@ const FundPost = ({post}) => {
                     <div className="text-sm mt-1 text-gray-500 ms-5 font-light"><FontAwesomeIcon icon={faFaceSmile} /></div>
                     <div className='text-sm text-gray-500 mt-1 ms-1'>For {post.totalPeople} people</div>
                 </div>
-              <h1 className='text-[22px] font-bold text-black leading-6 mt-5 hover:text-violet-600 cursor-pointer'>{post.title} </h1>
+              <Link to={`/SingleFund/${post._id}`} className='text-[22px] font-bold text-black leading-6 mt-5 hover:text-violet-600 cursor-pointer'>{post.title} </Link>
               <div className='mt-3 flex flex-col'>
                 <div className="flex flex-row justify-between mb-2">
                     <p className='text-gray-400 text-sm '>Raised: ${post.collectedAmount}</p>
