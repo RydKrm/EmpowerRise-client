@@ -54,9 +54,13 @@ const BlogsDetails = () => {
                                 <p className="text-xl ps-2">{blog.name}</p>
                             </div>
                             <h2 className="text-2xl font-semibold mb-2">{blog.title}</h2>
-                            <div className='flex'>
+                            <div className='flex mb-2'>
                                 <h1 className="text-xl font-bold">Donation:</h1>
-                                <p className="text-green-500 ps-2 text-xl">{blog.donation}</p>
+                                <p className=" ps-2 text-xl">{blog.donation}</p>
+                            </div>
+                            <div className='flex mb-2'>
+                                <h1 className="text-xl font-bold">Total People:</h1>
+                                <p className=" ps-2 text-xl">{blog.totalPeople}</p>
                             </div>
 
                             <div>
