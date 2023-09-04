@@ -6,9 +6,17 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import EditCategory from "../Pages/Admin/AddCategory/EditCategory";
+import AddDonation from "../Pages/Donation/AddDonation/AddDonation";
 import AddBlog from "../Pages/User/AddBlog/AddBlog";
+import DonationContainer from "../Pages/Donation/Donation/DonationContainer";
 import Blogs from "../Pages/Home/Blogs/Blogs";
 import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
+import AddFund from "../Pages/Fund/AddFund/AddFund";
+import FundContainer from "../Pages/Fund/Fund/FundContainer";
+import SingleDonation from "../Pages/Donation/SingleDonation/SingleDonation";
+import SingleFund from "../Pages/Fund/SingleFund/SingleFund";
+
+
 
 
   export const router = createBrowserRouter([
@@ -19,30 +27,42 @@ import BlogsDetails from "../Pages/User/BlogsDetails/BlogsDetails";
         {
           path: "/",
           element: <Home />,
-        },
-        {
+        },{
           path: "login",
           element: <Login />,
-        },
-        {
+        }, {
           path: "registration",
           element: <Registration />,
-        },
-        {
+        },{
           path:'addCategory',
           element: <EditCategory/>
-        },
-        {
+        },{
+          path:'addDonation',
+          element:<AddDonation/>
+        },{
+          path:'Donation',
+          element:<DonationContainer/>
+        },{
+          path:'SingleDonation/:id',
+          element:<SingleDonation/>
+        },{
           path:'addBlog',
           element: <AddBlog/>
-        },
-        {
+        },{
           path:'blogs',
           element: <Blogs/>
-        },
-        {
+        },{
           path:'blogs/:id',
           element: <BlogsDetails/>
+        },{
+          path:'addFund',
+          element:<AddFund/>
+        },{
+          path:'fund',
+          element:<FundContainer/>
+        },{
+          path:'SingleFund/:id',
+          element:<SingleFund/>
         }
 
       ],

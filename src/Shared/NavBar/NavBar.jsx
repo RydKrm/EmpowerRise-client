@@ -48,6 +48,10 @@ const NavBar = () => {
                         </li>
                         <li><a>Item 3</a></li>
                         <li><Link to='addCategory'>Add Category</Link></li>
+                        <li><Link to='addDonation'>Add Donation</Link></li>
+                        <li><Link to='Donation'> Donation</Link></li>
+                        <li><Link to='addFund'>Add Fund </Link></li>
+                        <li><Link to='Fund'> Fund</Link></li>
                         <li><Link to='addBlog'>Add Blog</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
                     </ul>

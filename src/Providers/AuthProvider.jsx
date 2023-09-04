@@ -40,7 +40,6 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-
     const authInfo = {
         user,
         loading,
@@ -50,7 +49,8 @@ const AuthProvider = ({ children }) => {
         updateProfileArea,
         googleSignIn
 
-    }
+    };
+    //export AuthContext;
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
