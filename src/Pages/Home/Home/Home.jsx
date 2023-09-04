@@ -1,7 +1,9 @@
+import Blogs from "../Blogs/Blogs";
+
 const Home = () => {
     return (
         <div>
-            
+            <Blogs></Blogs>
         </div>
     );
 };

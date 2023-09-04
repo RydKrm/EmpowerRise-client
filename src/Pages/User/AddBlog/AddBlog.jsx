@@ -5,17 +5,32 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 const AddBlog = () => {
-    const { register, handleSubmit, reset, formState: { errors }} = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user } = useContext(AuthContext);
 
-    const defaultName = user ? user.displayName
-        : ""; // Get the default name from the user context
+    const defaultName = user ? user.displayName : ""; // Get the default name from the user context
 
     const onSubmit = (data) => {
+        // Get the current date and time
+        const currentDate = new Date();
+
+        // Get the user's preferred locale
+        const userLocale = navigator.language || "en-US";
+
+        // Format the current date according to the user's locale
+        const formattedDateTime = currentDate.toLocaleDateString(userLocale, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+
         const blogData = {
             ...data,
-            totalVisits: parseInt(data.totalVisits) || 0
+            name: defaultName,
+            totalVisits: parseInt(data.totalVisits) || 0,
+            date: formattedDateTime // Add the formatted date
         };
+
         axios.post('http://localhost:5000/blogs', blogData, {
             headers: {
                 'Content-Type': 'application/json'
@@ -36,9 +51,8 @@ const AddBlog = () => {
             })
             .catch(error => console.log(error));
     };
-
     return (
-        <div className="mb-4 mt-5">
+        <div className="mb-4 mt-5 max-w-screen-xl mx-auto">
             <h1 className="text-3xl font-bold mb-4 text-center">Add Blog</h1>
             <div className="card flex-shrink-0 shadow-2xl bg-base-100">
                 <div className="card-body">
@@ -118,7 +132,7 @@ const AddBlog = () => {
                                     id="totalVisits"
                                     value="0" // Set the default value
                                     disabled // Disable editing
-                                    
+
                                 />
                             </div>
                         </div>

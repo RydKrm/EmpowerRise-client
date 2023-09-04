@@ -5,3 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .container {
+        @apply max-w-6xl mx-auto 
+    }
+}
+
