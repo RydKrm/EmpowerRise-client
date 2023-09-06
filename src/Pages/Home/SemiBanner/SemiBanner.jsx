@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SemiBanner = () => {
     return (
         <div className="mt-10 mb-10">
@@ -10,7 +8,7 @@ const SemiBanner = () => {
                 }}
             >
                 <div className="text-center lg:left-[40%] absolute inset-0 flex flex-col justify-center items-center">
-                    <h1 className="text-white text-2xl md:text-4xl lg:text-6xl mb-3">
+                    <h1 className="text-white text-2xl font-bold font-poppins md:text-4xl lg:text-6xl mb-3">
                         We always <br /> see hope
                     </h1>
                     <p className="text-white text-lg lg:text-xl">
