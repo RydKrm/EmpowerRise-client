@@ -10,7 +10,8 @@ const FundPeople = ({postId,reload}) => {
     .then(res=>{ setDonation(res.data)})
     .catch(err=>console.log(err));
    },[postId,reload]);
-    console.log("donation ",donation)
+
+   
  return (
  <>
   {donation.length &&<div className="overflow-x-auto">

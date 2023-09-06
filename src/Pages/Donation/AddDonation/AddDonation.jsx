@@ -51,7 +51,7 @@ const AddDonation = () => {
           collectedAmount:0,
           userId,
           category:selectCategory,
-          status:'processing',
+          status:'pending',
           date: new Date()
         };
     console.log(data);
