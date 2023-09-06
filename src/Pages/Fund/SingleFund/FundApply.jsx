@@ -61,7 +61,8 @@ const FundApply = ({details,user,setReload}) => {
       postId:details._id,
       userName:info.name,
       userEmail:info.email,
-      document:documentUrl
+      document:documentUrl,
+      status:'pending'
     }
     console.log("imageURL ", documentUrl);
     

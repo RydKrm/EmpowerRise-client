@@ -13,7 +13,7 @@ const useUserInfo = ()=>{
     .catch(err=>console.log(err));
        }
    },[user?.email])
-    const name = userInfo.name;
+    const name = userInfo.name; 
     const photoURL = userInfo.photoURL;
     const email = userInfo.email;
     const userId = userInfo._id;

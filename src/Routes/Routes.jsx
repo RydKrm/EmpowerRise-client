@@ -15,8 +15,14 @@ import AddFund from "../Pages/Fund/AddFund/AddFund";
 import FundContainer from "../Pages/Fund/Fund/FundContainer";
 import SingleDonation from "../Pages/Donation/SingleDonation/SingleDonation";
 import SingleFund from "../Pages/Fund/SingleFund/SingleFund";
-
-
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import DonationRequest from "../Pages/Dashboard/AdminDashboard/DonationRequest/DonationRequest";
+import FundRequest from "../Pages/Dashboard/AdminDashboard/FundRequest/FundRequest";
+import UserDonationTable from "../Pages/Dashboard/UserDashboard/UserDonationTable/UserDonationTable";
+import UserFundTable from "../Pages/Dashboard/UserDashboard/UserFundTable/UserFundTable";
+import FundAllApply from "../Pages/Dashboard/UserDashboard/FundAllApply/FundAllApply";
+import UserNotification from "../Pages/Dashboard/UserDashboard/UserNotification/UserNotification";
+import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfile";
 
 
   export const router = createBrowserRouter([
@@ -63,6 +69,33 @@ import SingleFund from "../Pages/Fund/SingleFund/SingleFund";
         },{
           path:'SingleFund/:id',
           element:<SingleFund/>
+        },{
+          path: 'dashboard',
+        element: <Dashboard />,
+        children: [
+          {
+            path:'donationRequest',
+            element:<DonationRequest/>
+          },{
+            path:'fundRequest',
+            element:<FundRequest/>
+          },{
+            path:'userDonationTable',
+            element:<UserDonationTable/>
+          },{
+            path:'userFundTable',
+            element:<UserFundTable/>
+          },{
+            path:'fundAllApply/:postId',
+            element:<FundAllApply/>
+          },{
+            path:'userNotification',
+            element:<UserNotification/>
+          },{
+            path:'userProfile',
+            element:<UserProfile/>
+          }
+        ]
         }
 
       ],

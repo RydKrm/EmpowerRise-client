@@ -54,6 +54,7 @@ const NavBar = () => {
                         <li><Link to='Fund'> Fund</Link></li>
                         <li><Link to='addBlog'>Add Blog</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
+                        <li><Link to='dashboard/userProfile'>Dashboard</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
