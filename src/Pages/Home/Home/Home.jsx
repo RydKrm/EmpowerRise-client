@@ -1,9 +1,17 @@
-import Blogs from "../Blogs/Blogs";
+import About from "../About/About";
+import Banner from "../Banner/Banner";
+import SemiBanner from "../SemiBanner/SemiBanner";
+
 
 const Home = () => {
     return (
         <div>
-            <Blogs></Blogs>
+            
+           <Banner></Banner>
+           
+           <About></About>
+
+           <SemiBanner></SemiBanner>
         </div>
     );
 };
