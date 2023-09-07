@@ -1,7 +1,8 @@
 import About from "../About/About";
 import Banner from "../Banner/Banner";
+import FeaturedProjects from "../FeaturedProjects/FeaturedProjects";
 
-//import FeaturedCampaign from "../FuturedCampian/FuturedCampian";
+import FeaturedCampaign from "../FuturedCampian/FuturedCampian";
 import SemiBanner from "../SemiBanner/SemiBanner";
 import Strength from "../Strength/Strength";
 
@@ -9,16 +10,16 @@ import Strength from "../Strength/Strength";
 const Home = () => {
     return (
         <div>
-            
-           <Banner></Banner>
-           
-           <About></About>
 
-           <SemiBanner></SemiBanner>
-           
-           <Strength></Strength>
+            <Banner></Banner>
+            <FeaturedProjects></FeaturedProjects>
+            <About></About>
+            <SemiBanner></SemiBanner>
+            <FeaturedCampaign></FeaturedCampaign>
+            <Strength></Strength>
 
-           {/* <FeaturedCampaign></FeaturedCampaign> */}
+
+
         </div>
     );
 };
