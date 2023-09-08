@@ -14,7 +14,7 @@ const useUserInfo = ()=>{
        }
    },[user?.email])
     const name = userInfo.name; 
-    const photoURL = userInfo.photoURL;
+    const photoURL = userInfo.photoURL; 
     const email = userInfo.email;
     const userId = userInfo._id;
     

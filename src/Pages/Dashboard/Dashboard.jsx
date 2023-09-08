@@ -1,9 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
-
 const Dashboard = () => {
-    return (
-        <div>
-<div className="drawer lg:drawer-open">
+return (
+ <div className="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
     <div className="drawer-content flex flex-col">
         <Outlet></Outlet>
@@ -19,12 +17,10 @@ const Dashboard = () => {
                 <li><Link to='/dashboard/userDonationTable'> Donation Post</Link></li>
                 <li><Link to='/dashboard/userFundTable'> Fund Post</Link></li>
                 <li><Link to='/dashboard/userNotification'> User Notification </Link></li>
-
             </ul>
         </div>
     </div>
-</div>
-        </div>
+  </div>
     );
 };
 

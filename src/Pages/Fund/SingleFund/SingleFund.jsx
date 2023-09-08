@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faClock, faCompass, faFaceSmile} from '@fortawesome/free-regular-svg-icons';
 import FundApply from './FundApply';
 import FundPeople from './FundPeople';
+import Comment from '../../Comment/Comment';
 
 const SingleFund = () => {
     const {id} = useParams();
@@ -89,6 +90,7 @@ const SingleFund = () => {
         <div className="flex flex-col-reverse md:flex-row ">
            <div className="w-full md:w-3/5 "> 
            <div dangerouslySetInnerHTML={{ __html: details.description }} className='text-justify md:me-16 ms-8'/>
+           <Comment type='donation' postId={id}/>
          </div>
          <div className="w-full md:w-2/5"> 
           <FundPeople postId={details._id} reload={reload}/>

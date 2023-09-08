@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useDaysLeft from '../../../CustomHooks/useDaysLeft/useDaysLeft';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCompass } from '@fortawesome/free-regular-svg-icons';
 import DonationPayment from './DonationPayment';
 import DonatedPeple from './DonatedPeple';
-import { set } from 'react-hook-form';
+import Comment from '../../Comment/Comment';
 
 const SingleDonation = () => {
     const {id} = useParams();
@@ -88,6 +88,7 @@ const SingleDonation = () => {
         <div className="flex flex-col-reverse md:flex-row ">
            <div className="w-full md:w-3/5 "> 
            <div dangerouslySetInnerHTML={{ __html: details.description }} className='text-justify md:me-16 ms-8'/>
+           <Comment type='donation' postId={id}/> 
          </div>
          <div className="w-full md:w-2/5"> 
           <DonatedPeple postId={details._id} reload={reload}/>
