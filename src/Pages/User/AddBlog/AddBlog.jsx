@@ -52,7 +52,7 @@ const AddBlog = () => {
             .catch(error => console.log(error));
     };
     return (
-        <div className="mb-4 mt-5 max-w-screen-xl mx-auto">
+        <div className="mb-4 mt-5 max-w-screen-xl mx-auto ">
             <h1 className="text-3xl font-bold mb-4 text-center">Add Blog</h1>
             <div className="card flex-shrink-0 shadow-2xl bg-base-100">
                 <div className="card-body">
