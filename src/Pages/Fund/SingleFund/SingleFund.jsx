@@ -7,6 +7,7 @@ import {faClock, faCompass, faFaceSmile} from '@fortawesome/free-regular-svg-ico
 import FundApply from './FundApply';
 import FundPeople from './FundPeople';
 import Comment from '../../Comment/Comment';
+import SectionTitle from '../../../component/SectionTittle/SectionTittle';
 
 const SingleFund = () => {
     const {id} = useParams();
@@ -42,7 +43,8 @@ const SingleFund = () => {
 
     return (
     <>
-     <div className="container font-poppins mb-36">
+    <SectionTitle img={details.image} tittle={details.title} />
+     <div className="container font-poppins mb-36 mt-10">
        <div className="flex flex-col md:flex-row">
          <div className="w-full md:w-3/5 md:h-[480px]"> 
            <img className='w-full md:w-[670px] md:h-full flex justify-center' src={details.image} alt={details.title} />
