@@ -26,7 +26,7 @@ const FeaturedProjects = () => {
             </div>
             <div className="flex justify-center items-center mt-4">
                 <Link to='Donation'>
-                <button className='bg-cLightDark text-black hover:bg-cLightLightBlue px-4 py-3 rounded-md'>See More</button>
+                    <button className='bg-cBlueGreen text-black hover:bg-cLightLightBlue px-4 py-3 rounded-md'>See More</button>
                 </Link>
             </div>
         </div>

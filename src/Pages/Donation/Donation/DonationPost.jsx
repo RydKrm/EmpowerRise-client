@@ -19,11 +19,11 @@ const DonationPost = ({post}) => {
                 
                 <div className="flex flex-row">
                     <div className="bg-violet-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins">{post.category}</div>
-                    <div className="bg-blue-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2">{post.status}</div>
+                    <div className={` ${post.status==='processing' ?'bg-blue-600' : post.status==='successful' ? 'bg-green-500' : 'bg-red-500' } px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2`}>{post.status}</div>
                 </div>
                  <div className='flex flex-row'>    
                     <div className="text-sm mt-1 text-gray-500 ms-2 me-1 font-light"><FontAwesomeIcon icon={faClock} /></div>
-                    <div className='text-sm text-gray-500 mt-1'>{daysLeft} days left</div>
+                    <div className='text-sm text-gray-500 mt-1'>{Math.abs(daysLeft)} days {daysLeft>=0 ? 'left' : 'behind'}</div>
                     <div className="text-sm mt-1 text-gray-500 ms-5 font-light"><FontAwesomeIcon icon={faCompass} /></div>
                     <div className='text-sm text-gray-500 mt-1 ms-1'>{post.location} </div>
                 </div>

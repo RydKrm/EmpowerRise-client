@@ -57,10 +57,10 @@ const FeaturedCampaign = () => {
                         alt="Campaign"
                         className="w-full h-auto"
                     />
-                    <div className='absolute w-[400px] h-[300px] top-4 left-[35%]  bg-white p-4 box-border'>
-                        <h1 className="text-lg font-bold mb-2 mt-2">{imageTexts[currentImageIndex].title}</h1>
-                        <p className="text-sm  mb-2">{imageTexts[currentImageIndex].description}</p>
-                        <div className='flex justify-center'>
+                    <div className='absolute w-[400px] h-[300px] top-4 left-[35%]  bg-white p-4 box-border shadow-lg'>
+                        <h1 className="text-lg font-bold mb-2 mt-2 ">{imageTexts[currentImageIndex].title}</h1>
+                        <p className="text-sm text-justify mb-2">{imageTexts[currentImageIndex].description}</p>
+                        <div className='flex justify-start'>
                             <button className=" mt-2 mb-2 bg-blue-500 text-white p-3 rounded-md">Donate</button>
                         </div>
                     </div>

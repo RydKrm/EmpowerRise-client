@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import SectionTitle from '../../../component/SectionTittle/SectionTittle';
 import img from '../../../assets/blogs/blogImage.jpg'
+import Comment from '../../Comment/Comment';
 
 const BlogsDetails = () => {
     const { id } = useParams(); // Get the blog ID from the URL
@@ -30,8 +31,8 @@ const BlogsDetails = () => {
                 <SectionTitle img={img} tittle={blog.title} ></SectionTitle>
             </div>
             <div className="max-w-screen-xl mx-auto">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full lg:w-3/4 bg-white p-4 shadow-md rounded-md">
+                <div className="flex flex-wrap justify-center mb-10">
+                    <div className="w-full lg:w-3/4 bg-white p-4 shadow-md rounded-md ">
                         <img
                             src={blog.image} // Replace with the image URL from the blog data
                             alt={blog.title}
@@ -67,6 +68,7 @@ const BlogsDetails = () => {
                                 <h1 className="text-3xl font-bold mt-3">Short Story:</h1>
                                 <p className="mt-4">{blog.description}</p>
                             </div>
+                            <Comment type='donation' postId={id}/> 
                         </div>
                     </div>
                 </div>
