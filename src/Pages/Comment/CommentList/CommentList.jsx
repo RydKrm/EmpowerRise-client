@@ -15,7 +15,7 @@ const CommentList = ({postId,type,commentReload}) => {
 
     return (
         <div>
-        { list.length && <h1 className='text-2xl font-poppins mt-5'>Comment List </h1>}
+        { list.length>0 && <h1 className='text-2xl font-poppins mt-5'>Comment List </h1>}
             {
               list.map((item)=>
               <div key={item._id} className="border my-3 p-5">

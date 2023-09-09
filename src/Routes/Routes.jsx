@@ -23,6 +23,8 @@ import UserFundTable from "../Pages/Dashboard/UserDashboard/UserFundTable/UserFu
 import FundAllApply from "../Pages/Dashboard/UserDashboard/FundAllApply/FundAllApply";
 import UserNotification from "../Pages/Dashboard/UserDashboard/UserNotification/UserNotification";
 import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfile";
+import EditDonation from "../Pages/Dashboard/AdminDashboard/EditDonation/EditDonation";
+import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
 
 
   export const router = createBrowserRouter([
@@ -94,6 +96,12 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfil
           },{
             path:'userProfile',
             element:<UserProfile/>
+          },{
+            path:'editDonation',
+            element:<EditDonation/>
+          },{
+            path:'editFund',
+            element:<EditFund/>
           }
         ]
         }

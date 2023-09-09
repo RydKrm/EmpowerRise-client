@@ -17,6 +17,9 @@ return (
                 <li><Link to='/dashboard/userDonationTable'> Donation Post</Link></li>
                 <li><Link to='/dashboard/userFundTable'> Fund Post</Link></li>
                 <li><Link to='/dashboard/userNotification'> User Notification </Link></li>
+                <li><Link to='/dashboard/editDonation'> Edit Donation </Link></li>
+                <li><Link to='/dashboard/editFund'> Edit Fund </Link></li>
+
             </ul>
         </div>
     </div>
