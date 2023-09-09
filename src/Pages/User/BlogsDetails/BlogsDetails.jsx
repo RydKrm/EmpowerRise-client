@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import SectionTitle from '../../../component/SectionTittle/SectionTittle';
 import img from '../../../assets/blogs/blogImage.jpg'
+import Comment from '../../Comment/Comment';
 
 const BlogsDetails = () => {
     const { id } = useParams(); // Get the blog ID from the URL
@@ -67,6 +68,7 @@ const BlogsDetails = () => {
                                 <h1 className="text-3xl font-bold mt-3">Short Story:</h1>
                                 <p className="mt-4">{blog.description}</p>
                             </div>
+                            <Comment type='donation' postId={id}/> 
                         </div>
                     </div>
                 </div>
