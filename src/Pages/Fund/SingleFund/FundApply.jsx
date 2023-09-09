@@ -5,10 +5,12 @@ import {getStorage, getDownloadURL, ref, uploadBytes} from 'firebase/storage';
 import {v4 as uuidv4} from 'uuid';
 import {app} from '../../../firebase/firebase.config';
 import img from '../../../assets/donation/defaultDonation.png';
+
  
 const FundApply = ({details,user,setReload}) => {
   const uniqueId = uuidv4();
   const Storage = getStorage(app);
+
   //state
   const [info,setInfo] = useState({});
   const [selectedImages, setSelectedImages] = useState(null);
@@ -90,7 +92,7 @@ const FundApply = ({details,user,setReload}) => {
               <div className='flex flex-col md:ms-4'>
                 <div className='flex flex-col'>
                 <label className='text-md text-poppins text-md ms-1'>Name</label>
-                <input className='border rounded-sm border-violet-600 ps-4 mt-3 h-10 me-5' onBlur={handleInfo} name='Name' type='text' />
+                <input className='border rounded-sm border-violet-600 ps-4 mt-3 h-10 me-5' onBlur={handleInfo} name='name' type='text' />
               </div>
               <div className='flex flex-col mt-3'>
                 <label className='text-md text-poppins text-md ms-1 mb-0'>Email</label>
