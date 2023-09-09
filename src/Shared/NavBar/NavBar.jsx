@@ -1,15 +1,35 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useUserInfo from "../../CustomHooks/useUserInfo/useUserInfo";
+import axios from "axios";
 const NavBar = () => {
+
+    //declaration
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate()
-    const handleLogOut = () => {
+
+    //state 
+    const [notification,setNotification] = useState(0);
+ 
+    //custom hook 
+    const {userId} = useUserInfo();
+
+    //effect 
+   useEffect(()=>{
+    axios.post('http://localhost:5000/countNotofication',{userId})
+    .then(res=>setNotification(res.data.total))
+    .catch(err=>console.log(err))
+   },[userId])
+
+    //function 
+       const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error));
         navigate('/')
-    }
+    } 
+
     return (
             <nav className="navbar bg-cLightDark">
                 <div className="navbar-start">
@@ -47,7 +67,8 @@ const NavBar = () => {
                         <li><Link to='Fund'> Fund</Link></li>
                         <li><Link to='addBlog'>Add Blog</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
-                        <li><Link to='dashboard/userProfile'>Dashboard</Link></li>
+                        <li><Link to='dashboard/userNotification'>Dashboard 
+                        <div className="badge badge-primary">{notification}</div></Link></li>
 
                     </ul>
                 </div>
