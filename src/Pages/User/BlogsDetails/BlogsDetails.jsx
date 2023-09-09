@@ -31,8 +31,8 @@ const BlogsDetails = () => {
                 <SectionTitle img={img} tittle={blog.title} ></SectionTitle>
             </div>
             <div className="max-w-screen-xl mx-auto">
-                <div className="flex flex-wrap justify-center">
-                    <div className="w-full lg:w-3/4 bg-white p-4 shadow-md rounded-md">
+                <div className="flex flex-wrap justify-center mb-10">
+                    <div className="w-full lg:w-3/4 bg-white p-4 shadow-md rounded-md ">
                         <img
                             src={blog.image} // Replace with the image URL from the blog data
                             alt={blog.title}

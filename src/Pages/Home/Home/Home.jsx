@@ -1,5 +1,6 @@
 import About from "../About/About";
 import Banner from "../Banner/Banner";
+import Blog from "../HomeBlog/HomeBlog";
 import FeaturedProjects from "../FeaturedProjects/FeaturedProjects";
 
 import FeaturedCampaign from "../FuturedCampian/FuturedCampian";
@@ -16,6 +17,7 @@ const Home = () => {
             <About></About>
             <SemiBanner></SemiBanner>
             <FeaturedCampaign></FeaturedCampaign>
+            <Blog></Blog>
             <Strength></Strength>
 
 
