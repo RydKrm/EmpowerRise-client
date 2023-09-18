@@ -16,9 +16,9 @@ const UserDonationTable = () => {
   },[userId])
 
     return (
-    <div>
-        <h2 className='text-3xl flex justify-center'> Donation Post </h2> 
-        <AdminComponent list={list} setList={setList} type='donationTable'/>
+    <div> 
+       {list.length<1 ? <h2 className='text-3xl flex justify-center mt-5'> No Post Fund. Add One </h2> :
+        <AdminComponent list={list} setList={setList} type='donationTable'/>} 
     </div>
     );
 };

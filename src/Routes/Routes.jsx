@@ -42,9 +42,6 @@ import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
           path: "registration",
           element: <Registration />,
         },{
-          path:'addCategory',
-          element: <EditCategory/>
-        },{
           path:'addDonation',
           element:<AddDonation/>
         },{
@@ -53,9 +50,6 @@ import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
         },{
           path:'SingleDonation/:id',
           element:<SingleDonation/>
-        },{
-          path:'addBlog',
-          element: <AddBlog/>
         },{
           path:'blogs',
           element: <Blogs/>
@@ -102,7 +96,13 @@ import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
           },{
             path:'editFund',
             element:<EditFund/>
-          }
+          },{
+          path:'addCategory',
+          element: <EditCategory/>
+        },{
+          path:'addBlog',
+          element: <AddBlog/>
+        }
         ]
         }
 

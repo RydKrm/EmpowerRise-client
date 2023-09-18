@@ -8,7 +8,7 @@ const CommentBox = ({postId,type,setCommentReload}) => {
     const [description,setDescription] = useState('');
     
     //custom Hook
-    const {userId,name,photoURL} = useUserInfo();
+    const {userId,name,photoURL} = useUserInfo(); 
     const {dateNow} = useDateNow();
 
     //function 

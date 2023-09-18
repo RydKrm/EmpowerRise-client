@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {Link, useParams} from 'react-router-dom';
-import FindUserName from "./FindUserName";
 import Swal from 'sweetalert2';
 
 const FundAllApply = () => {
@@ -54,7 +53,7 @@ const FundAllApply = () => {
         <th></th>
         <th>Name</th>
         <th>Status</th>
-        <th>Amount</th>
+        <th>Document</th>
         <th></th>
       </tr>
     </thead>
@@ -76,7 +75,7 @@ const FundAllApply = () => {
             </div>
           </div>
         </td>
-        <td><FindUserName id={item.userId} /></td>
+        <td>{item.userName}</td>
         <td>{item.userEmail}</td>
         <td><Link target="_blank" to={item.document} className="btn btn-accent btn-xs mr-2 text-white">Document</Link></td>
         <td>

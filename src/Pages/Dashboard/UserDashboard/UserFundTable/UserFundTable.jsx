@@ -17,8 +17,8 @@ const UserFundTable = () => {
 
     return (
     <div>
-        <h2 className='text-3xl flex justify-center'> Fund Post </h2> 
-        <AdminComponent list={list} setList={setList} type='fundTable'/>
+      {list.length<1 ? <h2 className='text-3xl flex justify-center mt-5'> No Post Fund. Add One </h2> :
+        <AdminComponent list={list} setList={setList} type='fundTable'/> }
     </div>
     );
 };
