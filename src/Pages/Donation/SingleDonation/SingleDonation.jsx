@@ -78,7 +78,10 @@ const SingleDonation = () => {
                   }
                 </div>
                 <div className='my-5'>
-                  {details.status==='processing' && <DonationPayment details={details} user={user} setReload={setReload} />}
+                   { //details.status==='processing' && 
+                  <DonationPayment details={details} user={user} setReload={setReload} />
+                  
+                }
                 </div>
                 
 

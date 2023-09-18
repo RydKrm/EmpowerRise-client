@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
 const useUserInfo = ()=>{
@@ -12,13 +12,18 @@ const useUserInfo = ()=>{
     })
     .catch(err=>console.log(err));
        }
-   },[user?.email])
+   },[user?.email]) 
+   
     const name = userInfo.name; 
     const photoURL = userInfo.photoURL; 
     const email = userInfo.email;
     const userId = userInfo._id;
+    const role = userInfo.role;
+    let phoneNumber = null;
+    if(userInfo.phoneNumber) phoneNumber = userInfo.phoneNumber;
+    let address  = null;
+    if(userInfo.address) address = userInfo.address;
     
-  
-  return {userId,email,name,photoURL};
+  return {userId,email,name,photoURL,role,phoneNumber,address};
 }
 export default useUserInfo;

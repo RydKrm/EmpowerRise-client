@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useUserInfo from '../../../../CustomHooks/useUserInfo/useUserInfo';
 import axios from 'axios';
 
 const UserProfile = () => {
-   const {name,email,userId,photoURL} = useUserInfo();
-
+   const {name,email,userId,photoURL,phoneNumber,address,role} = useUserInfo();
    const [userInfo,setUserInfo] = useState({});
 
    useEffect(()=>{
@@ -13,7 +12,7 @@ const UserProfile = () => {
     .catch(err=>console.error(err));
    },[userId])
 
-
+console.log("user info ",userInfo)
 
     return (
         <>
@@ -22,8 +21,11 @@ const UserProfile = () => {
            <div className='mt-5 ms-5'>
             <p>{name}</p>
            <p>{email}</p>
-           <p>Make {userInfo.fundPost} Fund Post</p>  
-           <p>Make {userInfo.donationPost} Donation Post</p> 
+          {userInfo.fundPost>0 && <p>Make {userInfo.fundPost} Fund Post</p>  } 
+          {userInfo.fundPost>0 && <p>Make {userInfo.donationPost} Donation Post</p> }
+          {phoneNumber && <p> Phone Number : {phoneNumber}</p>}
+          {role && <p> Role : {role}</p>}
+          {address && <p> Address : {address}</p>}
            </div>
             
           </div>   

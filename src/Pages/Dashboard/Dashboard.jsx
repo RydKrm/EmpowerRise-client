@@ -1,5 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
+import useUserInfo from '../../CustomHooks/useUserInfo/useUserInfo';
 const Dashboard = () => {
+
+    const {role} = useUserInfo();
+
 return (
  <div className="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -11,15 +15,20 @@ return (
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <div className='menu p-4 w-80 h-full text-base-content'>
             <ul className="bg-base-200 rounded-md h-[80%] p-5 pl-10">
+                {role==='user' && <> 
                 <li><Link to='/dashboard/userProfile'> User Profile </Link></li>
-                <li><Link to='/dashboard/donationRequest'>Donation Request</Link></li>
-                <li><Link to='/dashboard/fundRequest'>Fund Request</Link></li>
                 <li><Link to='/dashboard/userDonationTable'> Donation Post</Link></li>
                 <li><Link to='/dashboard/userFundTable'> Fund Post</Link></li>
                 <li><Link to='/dashboard/userNotification'> User Notification </Link></li>
+                <li><Link to='/dashboard/addBlog'>Add Blog</Link></li>
+                 </>}
+                 {role==='admin' && <> 
+                <li><Link to='/dashboard/donationRequest'>Donation Request</Link></li>
+                <li><Link to='/dashboard/fundRequest'>Fund Request</Link></li>
+                <li ><Link to='/dashboard/addCategory'>Add Category</Link></li>
                 <li><Link to='/dashboard/editDonation'> Edit Donation </Link></li>
                 <li><Link to='/dashboard/editFund'> Edit Fund </Link></li>
-
+              </> }
             </ul>
         </div>
     </div>
