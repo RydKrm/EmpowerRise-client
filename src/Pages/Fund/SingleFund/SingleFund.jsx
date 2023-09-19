@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faClock, faCompass, faFaceSmile} from '@fortawesome/free-regular-svg-icons';
 import FundApply from './FundApply';
 import FundPeople from './FundPeople';
+import Comment from '../../Comment/Comment';
+import SectionTitle from '../../../component/SectionTittle/SectionTittle';
 
 const SingleFund = () => {
     const {id} = useParams();
@@ -41,7 +43,8 @@ const SingleFund = () => {
 
     return (
     <>
-     <div className="container font-poppins mb-36">
+    <SectionTitle img={details.image} tittle={details.title} />
+     <div className="container font-poppins mb-36 mt-10">
        <div className="flex flex-col md:flex-row">
          <div className="w-full md:w-3/5 md:h-[480px]"> 
            <img className='w-full md:w-[670px] md:h-full flex justify-center' src={details.image} alt={details.title} />
@@ -59,7 +62,7 @@ const SingleFund = () => {
                        <p className='text-black mt-2 ms-2'>  ${details.amount} </p> 
                      </div>
                      <p className="text-sm font-light text-gray-400 my-1"><span className='text-black font-normal'><FontAwesomeIcon icon={faFaceSmile} className='me-2'/>{details.totalPeople} people</span> will get the money</p>
-                     <p className="text-sm font-light text-black"><FontAwesomeIcon icon={faClock} className='me-2' />{daysLeft} {`${daysLeft===1 ? 'day': 'days'} `}<span className='font-light text-gray-400 ms-2'>left for donation </span></p>
+                     <p className="text-sm font-light text-black"><FontAwesomeIcon icon={faClock} className='me-2' />{ Math.abs(daysLeft)} {`${daysLeft===1 ? 'day': 'days'} `}<span className='font-light text-gray-400 ms-2'>{daysLeft>0 ? 'left' : 'behind'} for donation </span></p>
                      <div className="flex flex-row mt-2">
                     <div className="bg-violet-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins">{details.category}</div>
                     <div className="bg-blue-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2">{details.status}</div>
@@ -89,6 +92,7 @@ const SingleFund = () => {
         <div className="flex flex-col-reverse md:flex-row ">
            <div className="w-full md:w-3/5 "> 
            <div dangerouslySetInnerHTML={{ __html: details.description }} className='text-justify md:me-16 ms-8'/>
+           <Comment type='fund' postId={id}/>
          </div>
          <div className="w-full md:w-2/5"> 
           <FundPeople postId={details._id} reload={reload}/>

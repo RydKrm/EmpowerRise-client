@@ -23,6 +23,9 @@ import UserFundTable from "../Pages/Dashboard/UserDashboard/UserFundTable/UserFu
 import FundAllApply from "../Pages/Dashboard/UserDashboard/FundAllApply/FundAllApply";
 import UserNotification from "../Pages/Dashboard/UserDashboard/UserNotification/UserNotification";
 import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfile";
+import EditDonation from "../Pages/Dashboard/AdminDashboard/EditDonation/EditDonation";
+import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
+import Documentation from "../documentation/Documentation";
 
 
   export const router = createBrowserRouter([
@@ -40,9 +43,6 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfil
           path: "registration",
           element: <Registration />,
         },{
-          path:'addCategory',
-          element: <EditCategory/>
-        },{
           path:'addDonation',
           element:<AddDonation/>
         },{
@@ -51,9 +51,6 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfil
         },{
           path:'SingleDonation/:id',
           element:<SingleDonation/>
-        },{
-          path:'addBlog',
-          element: <AddBlog/>
         },{
           path:'blogs',
           element: <Blogs/>
@@ -69,6 +66,9 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfil
         },{
           path:'SingleFund/:id',
           element:<SingleFund/>
+        },{
+          path:'docs',
+          element:<Documentation/>
         },{
           path: 'dashboard',
         element: <Dashboard />,
@@ -94,7 +94,19 @@ import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfil
           },{
             path:'userProfile',
             element:<UserProfile/>
-          }
+          },{
+            path:'editDonation',
+            element:<EditDonation/>
+          },{
+            path:'editFund',
+            element:<EditFund/>
+          },{
+          path:'addCategory',
+          element: <EditCategory/>
+        },{
+          path:'addBlog',
+          element: <AddBlog/>
+        }
         ]
         }
 

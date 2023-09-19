@@ -18,7 +18,7 @@ const Strength = () => {
     ];
 
     return (
-        <div className='mb-10 max-w-screen-lg mx-auto'>
+        <div className='mb-10 container mx-auto'>
             <div>
                 <div className="bg-cBlueGreen p-4 shadow-md mb-4 text-center rounded-md">
                     <h1 className="text-black text-2xl font-bold font-poppins md:text-4xl lg:text-6xl mb-3 pt-10 uppercase">Unity Makes Strength</h1>

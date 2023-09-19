@@ -1,5 +1,4 @@
 import { useState } from 'react';
-//import QuillTextEditor from '../../../components/QuillTextEditor/QuillTextEditor';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import SelectCategory from '../../../components/SelectCategory/SelectCategory';
@@ -10,7 +9,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import useUserInfo from '../../../CustomHooks/useUserInfo/useUserInfo';
 import Swal from 'sweetalert2';
-import useDateNow from '../../../CustomHooks/useDateNow/useDateNow';
 
 const AddFund = () => {
     const {
