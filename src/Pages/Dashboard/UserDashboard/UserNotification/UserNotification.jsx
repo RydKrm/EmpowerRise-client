@@ -54,7 +54,7 @@ const UserNotification = () => {
 
     return (
            <div className='flex flex-col'>
-      <h2 className="text-center text-xl font-poppins">Notification List </h2>
+             {list.length<1 ? <h2 className='text-3xl flex justify-center mt-5'> No Notification Fund. </h2> :
       <div className="divide-y mr-8 ms-5">
         {
           list.map((item) =>
@@ -76,7 +76,7 @@ const UserNotification = () => {
           )
         }
       </div>
-
+      }
 
 
     </div>
