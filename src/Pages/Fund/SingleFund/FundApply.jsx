@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import {useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {getStorage, getDownloadURL, ref, uploadBytes} from 'firebase/storage';
 import {v4 as uuidv4} from 'uuid';
 import {app} from '../../../firebase/firebase.config';
-import img from '../../../assets/donation/defaultDonation.png';
 import useUserInfo from '../../../CustomHooks/useUserInfo/useUserInfo';
 
  
@@ -12,7 +11,7 @@ const FundApply = ({details,user,setReload}) => {
   const uniqueId = uuidv4();
   const Storage = getStorage(app);
 
-  const {userId,name,photoURL,email} = useUserInfo();
+  const {userId,photoURL} = useUserInfo();
 
   //state
   const [info,setInfo] = useState({});
@@ -63,7 +62,6 @@ const FundApply = ({details,user,setReload}) => {
       document:documentUrl,
       status:'pending'
     }
-    console.log("imageURL ", documentUrl);
     
    axios.post('http://localhost:5000/applyFund',data)
    .then(res=>{

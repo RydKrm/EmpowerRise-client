@@ -44,8 +44,9 @@ const FundAllApply = () => {
 
     return (
         <div>
-             <h2 className='text-3xl flex justify-center'>Fund All Apply </h2> 
-             <div className="overflow-x-auto">
+        {list.length<1 ?<h2 className='text-3xl flex justify-center'>Fund All Apply </h2>  : 
+             
+  <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
@@ -88,7 +89,8 @@ const FundAllApply = () => {
     </tbody>  
   </table>
 </div>
-        </div>
+}
+</div>
     );
 };
 
