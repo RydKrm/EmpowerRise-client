@@ -13,7 +13,7 @@ const DonatedPeple = ({postId,reload}) => {
    // console.log("donation ",donation)
  return (
   <div className="overflow-x-auto">
-  {donation.length &&<table className="table">
+  {donation.length>0 &&<table className="table">
     <thead>
       <tr>
         <th>Name</th>

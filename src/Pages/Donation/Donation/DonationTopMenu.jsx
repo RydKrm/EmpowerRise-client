@@ -2,8 +2,9 @@ import {useEffect, useContext, useState} from 'react';
 import axios from 'axios';
 import DropDown from '../../../components/DropDown/DropDown';
 import {DataContext} from '../../../Context/DataContext';
+import { Link } from 'react-router-dom';
 
-const DonationTopMenu = () => {
+const DonationTopMenu = ({type}) => {
     const {dispatch} = useContext(DataContext);
     const [categoryList,setCategoryList] = useState([]);
         useEffect(()=>{
@@ -44,19 +45,24 @@ const DonationTopMenu = () => {
     }));
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3  ">
-                <div className="flex flex-row mx-4">
-                    <p className='font-poppins mt-5 me-5 font-light'>By Status</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 justify-items-stretch ">
+                <div className="flex flex-row mx-1">
+                    <p className='font-poppins mt-5 me-4 font-light'>By Status</p>
                     <DropDown List={selectStatus} handler={setStatus}/>
                 </div>
-                <div className="flex flex-row mx-4">
-                    <p className='font-poppins mt-5 me-5 font-light'> Sort By</p>
+                <div className="flex flex-row mx-1">
+                    <p className='font-poppins mt-5 me-4 font-light'> Sort By</p>
                     <DropDown List={sortBy} handler={setSort}/>
                 </div>
-                <div className="flex flex-row mx-4">
-                    <p className='font-poppins mt-5 me-5 font-light w-96'>Category</p>
+                <div className="flex flex-row mx-1 sm:me-8 md:md-0">
+                    <p className='font-poppins mt-5 me-4 font-light '>Category</p>
                     <DropDown List={selectCategory} handler={setCategory}/>
                 </div>
+                <div className="flex flex-row mx-1 ms-5 md:ms-0">
+                   {type==='fund' ?  <Link to='../addFund' className='font-poppins mt-3 me-5 font-light px-5 py-2 bg-violet-600 rounded-md text-white'>Add Fund Post</Link>
+                   : <Link to='../addDonation' className='font-poppins mt-3 me-5 font-light px-5 py-2 bg-violet-600 rounded-md text-white'>Add Donation Post</Link>
+                } </div>
+
                 
             </div>
     );
