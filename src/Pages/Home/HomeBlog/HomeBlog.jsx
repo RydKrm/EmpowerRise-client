@@ -17,10 +17,10 @@ const HomeBlog = () => {
     }, []);
 
     return (
-        <div className="container mx-auto mt-10 mb-10">
+        <div className="container mx-auto mt-60 lg:mt-10 md:mt-44 mb-10">
             <div>
                 {/* <p className="text-center text-xl font-sans ">Blog</p> */}
-                <h1 className='text-black text-2xl font-bold font-poppins md:text-4xl lg:text-6xl  text-center mb-5'>News & Feeds</h1>
+                <h1 className='text-black text-2xl font-bold font-poppins md:text-4xl lg:text-6xl text-center mb-5'>News & Feeds</h1>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {blogs.map(blog => (
