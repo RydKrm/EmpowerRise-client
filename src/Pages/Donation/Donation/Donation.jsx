@@ -4,6 +4,8 @@ import axios from 'axios';
 import DonationTopMenu from './DonationTopMenu';
 import DonationPost from './DonationPost';
 import DonationPagenation from './DonationPagenation';
+import SectionTitle from '../../../component/SectionTittle/SectionTittle';
+import img from '../../../assets/blogs/blogImage.jpg'
 
 const Donation = () => {
     const {state,dispatch} = useContext(DataContext);
@@ -28,16 +30,18 @@ const Donation = () => {
     },[])
 
     return (
-        <div className='max-w-screen-lg mx-auto divide-y'>
-            <DonationTopMenu/>
+        <>
+        <SectionTitle img={img} tittle='Donation Post' />
+        <div className='max-w-screen-lg mx-auto divide-y mt-8'>
+            <DonationTopMenu type='donation'/>
             <div className="mt-7 pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7">
             {
                 data.map(single=><DonationPost key={single._id} post={single}  />)
             }
             </div>
             <DonationPagenation totalData = {totalData}/>
-
         </div>
+        </>
     );
 };
 

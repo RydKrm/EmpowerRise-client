@@ -1,7 +1,7 @@
-import { faClock } from '@fortawesome/free-regular-svg-icons';
+import {faClock, faCompass} from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import useDaysLeft from '../../../CustomHooks/useDaysLeft/useDaysLeft';
+import { Link } from 'react-router-dom';
 
 const DonationPost = ({post}) => {
     const daysLeft = useDaysLeft(post.dayLeft);
@@ -18,13 +18,15 @@ const DonationPost = ({post}) => {
                 
                 <div className="flex flex-row">
                     <div className="bg-violet-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins">{post.category}</div>
-                    <div className="bg-blue-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2">{post.status}</div>
+                    <div className={` ${post.status==='processing' ?'bg-blue-600' : post.status==='successful' ? 'bg-green-500' : 'bg-red-500' } px-3 mb-2 font-normal text-sm py-1 text-white font-poppins ms-2`}>{post.status}</div>
                 </div>
                  <div className='flex flex-row'>    
                     <div className="text-sm mt-1 text-gray-500 ms-2 me-1 font-light"><FontAwesomeIcon icon={faClock} /></div>
-                    <div className='text-sm text-gray-500 mt-1'>{daysLeft} days left</div>
+                    <div className='text-sm text-gray-500 mt-1'>{Math.abs(daysLeft)} days {daysLeft>=0 ? 'left' : 'behind'}</div>
+                    <div className="text-sm mt-1 text-gray-500 ms-5 font-light"><FontAwesomeIcon icon={faCompass} /></div>
+                    <div className='text-sm text-gray-500 mt-1 ms-1'>{post.location} </div>
                 </div>
-              <h1 className='text-[22px] font-bold text-black leading-6 mt-5 hover:text-violet-600 cursor-pointer'>{post.title} </h1>
+              <Link to={`/SingleDonation/${post._id}`} className='text-[22px] font-bold text-black leading-6 mt-5 hover:text-violet-600 cursor-pointer'>{post.title} </Link>
               <div className='mt-3 flex flex-col'>
                 <div className="flex flex-row justify-between mb-2">
                     <p className='text-gray-400 text-sm '>Raised: ${post.collectedAmount}</p>

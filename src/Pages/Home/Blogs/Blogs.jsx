@@ -24,7 +24,7 @@ const Blogs = () => {
                 <SectionTitle img={img} tittle='Our Blog Here'></SectionTitle>
             </div>
             <div className="container p-4 max-w-screen-xl mx-auto">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {blogs.map(blog => (
                         <div key={blog._id} className="bg-white p-4 shadow-md rounded-md transform transition-transform hover:scale-105">
                             <div className="mt-2">
