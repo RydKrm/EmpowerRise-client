@@ -25,6 +25,7 @@ import UserNotification from "../Pages/Dashboard/UserDashboard/UserNotification/
 import UserProfile from "../Pages/Dashboard/UserDashboard/UserProfile/UserProfile";
 import EditDonation from "../Pages/Dashboard/AdminDashboard/EditDonation/EditDonation";
 import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
+import Documentation from "../documentation/Documentation";
 
 
   export const router = createBrowserRouter([
@@ -65,6 +66,9 @@ import EditFund from "../Pages/Dashboard/AdminDashboard/EditFund/EditFund";
         },{
           path:'SingleFund/:id',
           element:<SingleFund/>
+        },{
+          path:'docs',
+          element:<Documentation/>
         },{
           path: 'dashboard',
         element: <Dashboard />,

@@ -43,6 +43,7 @@ const NavBar = () => {
                             <li ><Link to='Donation'> Donation</Link></li>
                             <li ><Link to='Fund'> Fund</Link></li>
                             <li><Link to='addBlog'>Add Blog</Link></li>
+                            <li><Link to='docs'>Documentation</Link></li>
                             <li className="text-white"><Link to='blogs'>Blog</Link></li>
                         </ul>
                     </div>
@@ -53,10 +54,11 @@ const NavBar = () => {
                         <li><Link to='Donation'> Donation</Link></li>
                         <li><Link to='Fund'> Fund</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
-                       {role==='user' && <li><Link to='dashboard/userNotification'>Dashboard 
-                        <div className="badge badge-primary">{notification}</div></Link></li>} 
-                         {role==='admin' && <li><Link to='dashboard/userProfile'>Dashboard 
-                        <div className="badge badge-primary">{notification}</div></Link></li>} 
+                        <li><Link to='docs'>Documentation</Link></li>
+                        <li><Link to='dashboard/userNotification'>Dashboard 
+                        <div className="badge badge-primary">{notification}</div></Link></li>
+                         {/* {role==='admin' && <li><Link to='dashboard/userProfile'>Dashboard 
+                        <div className="badge badge-primary">{notification}</div></Link></li>}  */}
                     </ul>
                 </div>
                 <div className="navbar-end mr-4 lg:mr-20">
