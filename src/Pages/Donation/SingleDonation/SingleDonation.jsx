@@ -1,12 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useDaysLeft from '../../../CustomHooks/useDaysLeft/useDaysLeft';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCompass } from '@fortawesome/free-regular-svg-icons';
 import DonationPayment from './DonationPayment';
 import DonatedPeple from './DonatedPeple';
-import { set } from 'react-hook-form';
+import Comment from '../../Comment/Comment';
+import SectionTitle from '../../../component/SectionTittle/SectionTittle';
 
 const SingleDonation = () => {
     const {id} = useParams();
@@ -34,7 +35,8 @@ const SingleDonation = () => {
 
     return (
     <>
-     <div className="container font-poppins mb-36">
+    <SectionTitle img={details.image} tittle={details.title} />
+     <div className="container font-poppins mb-36 mt-8">
        <div className="flex flex-col md:flex-row">
          <div className="w-full md:w-3/5 md:h-[480px]"> 
            <img className='w-full md:w-[670px] md:h-full flex justify-center' src={details.image} alt={details.title} />
@@ -57,7 +59,7 @@ const SingleDonation = () => {
                        <p className='text-black mt-2 ms-2'>  ${details.amount} </p> 
                      </div>
                      <p className="text-sm font-light text-gray-400"><span className='text-black font-normal'>{collect}%</span> of total money is collected</p>
-                     <p className="text-sm font-light text-black"><FontAwesomeIcon icon={faClock} className='me-2' />{daysLeft} {`${daysLeft===1 ? 'day': 'days'} `}<span className='font-light text-gray-400 ms-2'>left for donation </span></p>
+                     <p className="text-sm font-light text-black"><FontAwesomeIcon icon={faClock} className='me-2' />{ Math.abs(daysLeft)} {`${daysLeft===1 ? 'day': 'days'} `}<span className='font-light text-gray-400 ms-2'>{daysLeft>0 ? 'left' : 'behind'} for donation </span></p>
                      <p className="text-md text-gray-400 font-light "><span className='font-normal text-black'><FontAwesomeIcon icon={faCompass} className='me-2' />{details.location}</span> city </p>
                      <div className="flex flex-row mt-2">
                     <div className="bg-violet-600 px-3 mb-2 font-normal text-sm py-1 text-white font-poppins">{details.category}</div>
@@ -76,7 +78,10 @@ const SingleDonation = () => {
                   }
                 </div>
                 <div className='my-5'>
+                   { //details.status==='processing' && 
                   <DonationPayment details={details} user={user} setReload={setReload} />
+                  
+                }
                 </div>
                 
 
@@ -88,6 +93,7 @@ const SingleDonation = () => {
         <div className="flex flex-col-reverse md:flex-row ">
            <div className="w-full md:w-3/5 "> 
            <div dangerouslySetInnerHTML={{ __html: details.description }} className='text-justify md:me-16 ms-8'/>
+           <Comment type='donation' postId={id}/> 
          </div>
          <div className="w-full md:w-2/5"> 
           <DonatedPeple postId={details._id} reload={reload}/>

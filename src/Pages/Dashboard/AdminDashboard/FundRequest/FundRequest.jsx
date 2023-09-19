@@ -12,9 +12,11 @@ const FundRequest = () => {
     },[])
 
     return(
-    <>
-     <h2 className='text-3xl flex justify-center'>Donation request </h2> 
-     <AdminComponent list={list} setList={setList} type='fund'/>
+    <> 
+    { list.length <1 ? <h2 className='text-3xl flex justify-center'>No Donation Post Request </h2>  
+    :
+     <AdminComponent list={list} setList={setList} type='fund'/> 
+    }
     </>
     )
 };

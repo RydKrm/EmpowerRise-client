@@ -14,7 +14,7 @@ const FundPeople = ({postId,reload}) => {
    
  return (
  <>
-  {donation.length &&<div className="overflow-x-auto">
+  {donation.length>0 &&<div className="overflow-x-auto">
    <table className="table">
     <thead>
       <tr>
