@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import {useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {getStorage, getDownloadURL, ref, uploadBytes} from 'firebase/storage';
 import {v4 as uuidv4} from 'uuid';
 import {app} from '../../../firebase/firebase.config';
-import img from '../../../assets/donation/defaultDonation.png';
+import useUserInfo from '../../../CustomHooks/useUserInfo/useUserInfo';
+
  
 const FundApply = ({details,user,setReload}) => {
   const uniqueId = uuidv4();
   const Storage = getStorage(app);
+
+  const {userId,photoURL} = useUserInfo();
+
   //state
   const [info,setInfo] = useState({});
   const [selectedImages, setSelectedImages] = useState(null);
-
-  let image = 'https://firebasestorage.googleapis.com/v0/b/empowerrise-21578.appspot.com/o/empowerRise%2Fimage%2Feb60ac7d-ba14-4953-bbd7-78aa19d29bd2_defaultDonation.png?alt=media&token=00b1d376-3174-4396-a87a-c10f4a204141';
-    if(user){
-       if(user.photoURL) image = user.photoURL; 
-    }
   
-
   //function 
   const uploadImages = async () => {
       if(selectedImages){
@@ -56,15 +54,14 @@ const FundApply = ({details,user,setReload}) => {
     })
     const documentUrl = await uploadImages();
     const data = {
-      userId:details.userId,
-      userImage:image,
+      userId:userId,
+      userImage:photoURL,
       postId:details._id,
       userName:info.name,
       userEmail:info.email,
       document:documentUrl,
       status:'pending'
     }
-    console.log("imageURL ", documentUrl);
     
    axios.post('http://localhost:5000/applyFund',data)
    .then(res=>{
@@ -90,7 +87,7 @@ const FundApply = ({details,user,setReload}) => {
               <div className='flex flex-col md:ms-4'>
                 <div className='flex flex-col'>
                 <label className='text-md text-poppins text-md ms-1'>Name</label>
-                <input className='border rounded-sm border-violet-600 ps-4 mt-3 h-10 me-5' onBlur={handleInfo} name='Name' type='text' />
+                <input className='border rounded-sm border-violet-600 ps-4 mt-3 h-10 me-5' onBlur={handleInfo} name='name' type='text' />
               </div>
               <div className='flex flex-col mt-3'>
                 <label className='text-md text-poppins text-md ms-1 mb-0'>Email</label>

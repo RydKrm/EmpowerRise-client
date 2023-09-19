@@ -2,24 +2,28 @@ import React, { useEffect, useState } from 'react';
 import img from '../../../assets/donation/defaultDonation.png'
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import useUserInfo from '../../../CustomHooks/useUserInfo/useUserInfo';
 const DonationPayment = ({details,user,setReload}) => {
     const [amount,setAmount] = useState(0);
     const [anonymous,setAnonymous] = useState(false);
     //console.log("details => ",details);
 
     let image = img;
-    if(user){
-       if(user.photoURL) image = user.photoURL; 
+   
+
+    //custom hooks 
+    const {userId,photoURL,name} = useUserInfo();
+    
+     if(user){
+       if(user.photoURL) image = photoURL; 
     }
-    
-    
   const onSubmit = () => {
     const data = {
         donatedAmount:parseInt(amount),
         isAnonymous:anonymous,
-        userId:details.userId,
+        userId:userId,
         userImage:image,
-        userName:user.name,
+        userName:name,
         postId:details._id
     }
     axios.post('http://localhost:5000/donationPayment',data)
@@ -61,7 +65,7 @@ const DonationPayment = ({details,user,setReload}) => {
                 onBlur={(e)=>{setAmount(e.target.value)}} type='number' defaultValue={amount}
             />
             </div>
-             <input className='border border-violet-600 ms-4 px-8 py-3 mt-5 cursor-pointer hover:bg-violet-600 hover:text-white hover:border-white hover:border-2 rounded-md' type="submit" onClick={onSubmit} />
+             <input className='border border-violet-600 ms-4 px-8 py-3 mt-5 cursor-pointer hover:bg-violet-600 hover:text-white hover:border-white hover:border-2 rounded-md' type="submit" onClick={onSubmit} value='Donate' />
         </form>
         </dialog>
     </div>
