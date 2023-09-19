@@ -22,7 +22,11 @@ const FeaturedProjects = () => {
                 <h1 className='text-black text-2xl font-bold font-poppins md:text-4xl lg:text-6xl mb-3 text-center'>Featured Projects</h1>
             </div>
             <div className="mt-7 pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7">
-                {data.slice(0, 6).map(single => <DonationPost key={single._id} post={single} />)}
+                {data.slice(0, 6).map(single => (
+                    <div key={single._id} className="flex justify-center items-center">
+                        <DonationPost post={single} />
+                    </div>
+                ))}
             </div>
             <div className="flex justify-center items-center mt-4">
                 <Link to='Donation'>
